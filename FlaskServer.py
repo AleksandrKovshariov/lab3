@@ -17,7 +17,7 @@ class FlaskServer(Server):
 
     @staticmethod
     def register_listeners():
-        ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
+        ComponentService.left_distance_sensor.triggered = EventService.send_distance_sensor_event
         # ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
 
     @staticmethod
