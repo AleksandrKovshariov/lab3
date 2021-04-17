@@ -22,6 +22,5 @@ class FlaskServer(Server):
 
     @staticmethod
     def init():
-        setup_logger('root')
         FlaskServer.register_listeners()
         requests.post(f'{Config.externalServerUrl}/numbers/{Config.roomNumber}/register', headers={'API-Key': Config.apiKey})
