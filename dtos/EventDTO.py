@@ -1,5 +1,4 @@
 from typing import TypeVar, Generic
-import json
 
 T = TypeVar('T')
 

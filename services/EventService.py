@@ -9,7 +9,7 @@ from services.JsonConvert import JsonConvert
 class EventService:
 
     def sendDistanceSensorEvent(self):
-        data = JsonConvert.to_json(EventDTO[DistanceSensorDTO]('DISTANCE', 'TRIGGERED', DistanceSensorDTO('LEFT')).to_json())
+        data = JsonConvert.to_json(EventDTO('DISTANCE', 'TRIGGERED', DistanceSensorDTO('LEFT')))
         print(data)
         requests.post(f'{Config.externalServerUrl}/events/distance',
                       headers={'API-Key': Config.apiKey},
