@@ -7,10 +7,9 @@ class JsonConvert(object):
     @classmethod
     def class_mapper(clsself, d):
         for keys, cls in clsself.mappings.items():
-            if keys.issuperset(d.keys()):   # are all required arguments present?
+            if keys.issuperset(d.keys()):
                 return cls(**d)
         else:
-            # Raise exception instead of silently returning None
             raise ValueError('Unable to find a matching class for object: {!s}'.format(d))
 
     @classmethod

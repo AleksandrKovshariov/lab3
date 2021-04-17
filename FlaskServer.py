@@ -5,8 +5,6 @@ from log import setup_logger
 import logging
 import requests
 
-from services.ComponentService import ComponentService
-
 setup_logger('root')
 logger = logging.getLogger('root')
 
@@ -18,7 +16,8 @@ class FlaskServer(Server):
 
     @staticmethod
     def register_listeners():
-        ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
+        pass
+        # ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
         # ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
 
     @staticmethod
