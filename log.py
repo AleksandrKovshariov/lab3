@@ -1,5 +1,4 @@
 import logging
-import sys
 
 formatter = logging.Formatter(fmt='%(asctime)s - %(levelname)s - %(message)s')
 handler = logging.StreamHandler()
