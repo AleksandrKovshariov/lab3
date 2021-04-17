@@ -1,3 +1,4 @@
+from Config import Config
 from services.EventService import EventService
 from flask_script import Server
 from log import setup_logger
