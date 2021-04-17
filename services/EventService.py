@@ -3,7 +3,7 @@ import json
 import requests
 
 from Config import Config
-from dtos.EventDTO import EventDTO
+from dtos.EventDTO import EventDTO, SensorType
 from dtos.sensors.DistanceSensorDTO import DistanceSensorDTO
 from services.JsonConvert import JsonConvert
 
@@ -11,7 +11,7 @@ from services.JsonConvert import JsonConvert
 class EventService:
 
     def sendDistanceSensorEvent(self):
-        data = JsonConvert.to_json(EventDTO('DISTANCE', 'TRIGGERED', DistanceSensorDTO('LEFT')))
+        data = JsonConvert.to_json(EventDTO(SensorType.DISTANCE, 'TRIGGERED', DistanceSensorDTO('LEFT')))
         print(data)
         requests.post(f'{Config.externalServerUrl}/events/distance',
                       headers={'API-Key': Config.apiKey, 'Content-type': 'application/json', 'Accept': 'application/json'},
