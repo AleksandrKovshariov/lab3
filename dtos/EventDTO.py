@@ -9,6 +9,3 @@ class EventDTO(Generic[T]):
         self.sensorType = sensorType
         self.eventType = eventType
         self.sensorData = sensorData
-
-    def to_json(self):
-        return json.dumps(self, default=lambda o: self.__dict__)
