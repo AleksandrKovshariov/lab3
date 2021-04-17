@@ -4,6 +4,9 @@ import logging
 from decouple import config
 import requests
 
+from services.ComponentService import ComponentService
+from services.EventService import EventService
+
 setup_logger('root')
 logger = logging.getLogger('root')
 
@@ -20,5 +23,11 @@ class FlaskServer(Server):
         return Server.__call__(self, app, *args, **kwargs)
 
     @staticmethod
+    def register_listeners():
+        ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
+        # ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
+
+    @staticmethod
     def init():
+        FlaskServer.register_listeners()
         requests.post(f'{Config.externalServerUrl}/numbers/{Config.roomNumber}/register', headers={'API-Key': Config.apiKey})
