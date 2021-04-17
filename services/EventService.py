@@ -13,4 +13,4 @@ class EventService:
         print(data)
         requests.post(f'{Config.externalServerUrl}/events/distance',
                       headers={'API-Key': Config.apiKey},
-                      data=data)
+                      json=data)
