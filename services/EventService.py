@@ -12,5 +12,5 @@ class EventService:
         data = JsonConvert.to_json(EventDTO('DISTANCE', 'TRIGGERED', DistanceSensorDTO('LEFT')))
         print(data)
         requests.post(f'{Config.externalServerUrl}/events/distance',
-                      headers={'API-Key': Config.apiKey},
+                      headers={'API-Key': Config.apiKey, 'Content-type': 'application/json'},
                       json=data)
