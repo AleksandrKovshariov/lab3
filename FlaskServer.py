@@ -1,3 +1,4 @@
+from services.EventService import EventService
 from flask_script import Server
 from log import setup_logger
 import logging
@@ -5,7 +6,6 @@ from decouple import config
 import requests
 
 from services.ComponentService import ComponentService
-from services.EventService import EventService
 
 setup_logger('root')
 logger = logging.getLogger('root')

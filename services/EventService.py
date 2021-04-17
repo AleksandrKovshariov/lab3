@@ -1,6 +1,6 @@
-from FlaskServer import Config
 import requests
 
+from FlaskServer import Config
 from dtos.EventDTO import EventDTO
 from dtos.sensors.DistanceSensorDTO import DistanceSensorDTO
 
