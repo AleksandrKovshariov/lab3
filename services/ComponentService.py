@@ -1,8 +1,4 @@
-import logging
-
 from components.sensors.DistanceSensor import DistanceSensor
-
-logger = logging.getLogger('root')
 
 try:
     import RPi.GPIO

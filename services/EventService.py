@@ -8,6 +8,7 @@ from services.JsonConvert import JsonConvert
 
 logger = logging.getLogger('root')
 
+
 class EventService:
 
     @staticmethod
