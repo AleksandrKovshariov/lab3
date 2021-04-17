@@ -6,4 +6,4 @@ class DistanceSensorDTO:
         self.distanceSensor = distanceSensor
 
     def to_json(self):
-        return json.dumps(self, default=lambda o: o.asdict)
+        return json.dumps(self, default=lambda o: self.__dict__)
