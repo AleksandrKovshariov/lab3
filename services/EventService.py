@@ -10,9 +10,9 @@ logger = logging.getLogger('root')
 
 class EventService:
 
-    def send_distance_sensor_event(self):
-        data = JsonConvert.to_json(EventDTO(EventType.TRIGGERED, SensorType.DISTANCE, DistanceSensorDTO(DistanceSensorType.LEFT)))
-        logger.info(f"Sending event distance sensor event {data}")
+    def send_distance_sensor_event(self, sensor_type: DistanceSensorType):
+        data = JsonConvert.to_json(EventDTO(EventType.TRIGGERED, SensorType.DISTANCE, DistanceSensorDTO(sensor_type)))
+        logger.info(f"Sending event: distance sensor event {data}")
         requests.post(f'{Config.externalServerUrl}/events/distance',
-                      headers={'API-Key': Config.apiKey, 'Content-type': 'application/json', 'Accept': 'application/json'},
+                      headers={'API-Key': Config.apiKey, 'Content-type': 'application/json'},
                       data=data)

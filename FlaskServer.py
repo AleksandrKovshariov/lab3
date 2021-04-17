@@ -1,4 +1,7 @@
+from functools import partial
+
 from Config import Config
+from dtos.sensors.DistanceSensorDTO import DistanceSensorType
 from services.ComponentService import ComponentService
 from services.EventService import EventService
 from flask_script import Server
@@ -17,8 +20,8 @@ class FlaskServer(Server):
 
     @staticmethod
     def register_listeners():
-        ComponentService.left_distance_sensor.triggered = EventService.send_distance_sensor_event
-        # ComponentService.left_distance_sensor.triggered = EventService.sendDistanceSensorEvent
+        ComponentService.left_distance_sensor.triggered = partial(EventService.send_distance_sensor_event, DistanceSensorType.LEFT)
+        ComponentService.right_distance_sensor.triggered = partial(EventService.send_distance_sensor_event, DistanceSensorType.RIGHT)
 
     @staticmethod
     def init():
