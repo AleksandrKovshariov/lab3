@@ -15,7 +15,7 @@ class EventType(Enum):
 
 
 class EventDTO(Generic[T]):
-    def __init__(self, sensorType: SensorType, eventType: EventType, sensorData: T):
+    def __init__(self, eventType: EventType, sensorType: SensorType, sensorData: T):
         self.sensorType: str = sensorType.value
         self.eventType: str = eventType.value
         self.sensorData = sensorData
