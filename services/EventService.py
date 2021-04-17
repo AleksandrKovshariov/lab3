@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 from Config import Config
@@ -13,4 +15,4 @@ class EventService:
         print(data)
         requests.post(f'{Config.externalServerUrl}/events/distance',
                       headers={'API-Key': Config.apiKey, 'Content-type': 'application/json', 'Accept': 'application/json'},
-                      data=data)
+                      data=json.loads(data))
