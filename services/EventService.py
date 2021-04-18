@@ -16,6 +16,6 @@ class EventService:
     def send_distance_sensor_event(sensor_type: DistanceSensorType):
         data = JsonConvert.to_json(EventDTO(SensorType.DISTANCE, DistanceSensorDTO(EventType.TRIGGERED, sensor_type)))
         logger.info(f"Sending event: distance sensor event {data}")
-        requests.post(f'{Config.externalServerUrl}/events/distance',
+        requests.post(f'{Config.externalServerUrl}/events/distance?number={Config.roomNumber}',
                       headers={'API-Key': Config.apiKey, 'Content-type': 'application/json'},
                       data=data)
