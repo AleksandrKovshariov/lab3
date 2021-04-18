@@ -8,14 +8,7 @@ class SensorType(Enum):
     DISTANCE = 'DISTANCE'
 
 
-class EventType(Enum):
-    ENABLED = 'ENABLED'
-    DISABLED = 'DISABLED'
-    TRIGGERED = 'TRIGGERED'
-
-
 class EventDTO(Generic[T]):
-    def __init__(self, eventType: EventType, sensorType: SensorType, sensorData: T):
+    def __init__(self, sensorType: SensorType, sensorData: T):
         self.sensorType: str = sensorType.value
-        self.eventType: str = eventType.value
         self.sensorData = sensorData

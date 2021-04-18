@@ -26,4 +26,6 @@ class FlaskServer(Server):
     @staticmethod
     def init():
         FlaskServer.register_listeners()
-        requests.post(f'{Config.externalServerUrl}/numbers/{Config.roomNumber}/register', headers={'API-Key': Config.apiKey})
+        r = requests.post(f'{Config.externalServerUrl}/numbers/{Config.roomNumber}/register', headers={'API-Key': Config.apiKey})
+        if not r.status_code == 200:
+            raise RuntimeError(f'Could not register room {Config.roomNumber}')
