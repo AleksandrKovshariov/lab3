@@ -9,10 +9,17 @@ manager = Manager(app)
 
 manager.add_command('runserver', FlaskServer())
 
-@app.route('/')
-def hello_world():
-    ComponentService().lock_door()
-    return 'Hello World!'
+
+@app.route('/number/lock')
+def lock_number():
+    ComponentService().lock_number()
+    return "Ok"
+
+
+@app.route('/number/unlock')
+def unlock_number():
+    ComponentService().unlock_number()
+    return "Ok"
 
 
 if __name__ == '__main__':
