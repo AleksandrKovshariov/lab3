@@ -21,7 +21,7 @@ class ComponentService(object):
             self._instance = super(ComponentService, self).__new__(self)
             self.left_distance_sensor = DistanceSensor(21)
             self.right_distance_sensor = DistanceSensor(25)
-            self.rgb = RGB(23, 19, 26)
+            self.rgb = RGB(26, 13, 6)
         return self._instance
 
     def lock_door(self):
