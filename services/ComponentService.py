@@ -12,7 +12,6 @@ except (RuntimeError, ModuleNotFoundError):
 
 logger = logging.getLogger('root')
 
-
 class ComponentService(object):
     _instance = None
 
