@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_script import Manager
 
 from FlaskServer import FlaskServer
@@ -13,13 +13,17 @@ manager.add_command('runserver', FlaskServer())
 @app.route('/number/lock', methods=['GET'])
 def lock_number():
     ComponentService().lock_number()
-    return "Ok"
+    return jsonify(
+        {'status': 'acknowledged'}
+    )
 
 
 @app.route('/number/unlock', methods=['GET'])
 def unlock_number():
     ComponentService().unlock_number()
-    return "Ok"
+    return jsonify(
+        {'status': 'acknowledged'}
+    )
 
 
 if __name__ == '__main__':
