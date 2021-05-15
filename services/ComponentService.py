@@ -25,5 +25,5 @@ class ComponentService(object):
         return self._instance
 
     def lock_door(self):
-        logger.log('Locking door')
+        logger.info(f"Locking door")
         self.rgb.red()
