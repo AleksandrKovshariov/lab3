@@ -10,7 +10,7 @@ manager = Manager(app)
 manager.add_command('runserver', FlaskServer())
 
 
-@app.route('/number/lock', methods=['GET'])
+@app.route('/number/lock', methods=['PUT'])
 def lock_number():
     ComponentService().lock_number()
     return jsonify(
@@ -18,7 +18,7 @@ def lock_number():
     )
 
 
-@app.route('/number/unlock', methods=['GET'])
+@app.route('/number/unlock', methods=['PUT'])
 def unlock_number():
     ComponentService().unlock_number()
     return jsonify(
