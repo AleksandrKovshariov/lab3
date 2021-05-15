@@ -10,6 +10,7 @@ import requests
 
 setup_logger('root')
 
+
 class FlaskServer(Server):
     def __call__(self, app, *args, **kwargs):
         self.init()
@@ -17,12 +18,15 @@ class FlaskServer(Server):
 
     @staticmethod
     def register_listeners():
-        ComponentService().left_distance_sensor.triggered = partial(EventService.send_distance_sensor_event, DistanceSensorType.LEFT)
-        ComponentService().right_distance_sensor.triggered = partial(EventService.send_distance_sensor_event, DistanceSensorType.RIGHT)
+        ComponentService().left_distance_sensor.triggered = partial(EventService.send_distance_sensor_event,
+                                                                    DistanceSensorType.LEFT)
+        ComponentService().right_distance_sensor.triggered = partial(EventService.send_distance_sensor_event,
+                                                                     DistanceSensorType.RIGHT)
 
     @staticmethod
     def init():
         FlaskServer.register_listeners()
-        r = requests.post(f'{Config.externalServerUrl}/numbers/{Config.roomNumber}/register', headers={'API-Key': Config.apiKey})
+        r = requests.post(f'{Config.externalServerUrl}/numbers/{Config.roomNumber}/register',
+                          headers={'API-Key': Config.apiKey})
         if not r.status_code == 200:
             raise RuntimeError(f'Could not register room {Config.roomNumber}')
