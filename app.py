@@ -10,13 +10,13 @@ manager = Manager(app)
 manager.add_command('runserver', FlaskServer())
 
 
-@app.route('/number/lock')
+@app.route('/number/lock', methods=['GET'])
 def lock_number():
     ComponentService().lock_number()
     return "Ok"
 
 
-@app.route('/number/unlock')
+@app.route('/number/unlock', methods=['GET'])
 def unlock_number():
     ComponentService().unlock_number()
     return "Ok"
