@@ -17,13 +17,13 @@ def rbg():
         {'status': 'acknowledged'}
     )
 
+
 @app.route('/data', methods=['GET'])
 def data():
-    ComponentService().data()
+    dataVal = ComponentService().data()
     return jsonify(
-        {'status': 'ok'}
+        {'data': dataVal}
     )
-
 
 
 @app.route('/')

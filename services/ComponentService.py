@@ -37,7 +37,7 @@ class ComponentService(object):
     def data(self):
         logging.info("Get hall sensor data")
         val = self.hall.value
-        logger.info(f"Hall sensor data ${val}")
+        logger.info(f"Hall sensor data {val}")
         return val
 
 

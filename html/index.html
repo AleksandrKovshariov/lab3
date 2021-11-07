@@ -30,9 +30,14 @@
             );
             document.getElementById("data").addEventListener("click",
                 () => {
-                    const blink = new XMLHttpRequest();
-                    blink.open("GET", '/data', true);
-                    blink.send()
+                    const data = new XMLHttpRequest();
+                    data.open("GET", '/data', true);
+                    data.send()
+                    data.onreadystatechange = () =>  {
+                        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                            alert(data.response)
+                        }
+                    }
                 },
                 false
             );
