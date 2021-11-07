@@ -10,11 +10,7 @@ manager = Manager(app)
 manager.add_command('runserver', FlaskServer())
 
 
-@app.route('/rbg', methods=['PUT'])
-def lock_number():
-
-
-@app.route('/number/unlock', methods=['PUT'])
+@app.route('/rgb', methods=['PUT'])
 def unlock_number():
     rgb = RGB(19, 13, 26)
     rdg.red()
