@@ -2,7 +2,6 @@ from flask import Flask, jsonify
 from flask_script import Manager
 
 from FlaskServer import FlaskServer
-from services.ComponentService import ComponentService
 
 app = Flask(__name__)
 manager = Manager(app)
