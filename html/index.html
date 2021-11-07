@@ -20,10 +20,10 @@
 
     <script>
         window.onload = () => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("PUT", '/rgb', true);
-            xhr.onload = document.getElementById("blink").addEventListener("click",
-                    () => xhr.send('{}'),
+            var blink = new XMLHttpRequest();
+            blink.open("PUT", '/rgb', true);
+            document.getElementById("blink").addEventListener("click",
+                    () => blink.send('{}'),
                     false
                 );
         }
