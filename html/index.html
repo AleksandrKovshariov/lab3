@@ -17,10 +17,22 @@
             margin-right: 20px;
         }
     </style>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", '/rgb', false);
+        xhr.onload = document.getElementById("blink").addEventListener("click",
+                function() {xhr.send('{}')},
+                false
+            );
+
+
+    </script>
+
 </head>
 <body>
 <div class="flex-parent jc-center">
-    <button type="submit" class="green margin-right">Blink</button>
+    <button id="blink" type="submit" class="green margin-right">Blink</button>
     <button type="submit" class="green margin-right">Confirm</button>
     <button type="submit" class="magenta">Cancel</button>
 </div>
