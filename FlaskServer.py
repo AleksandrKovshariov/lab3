@@ -15,10 +15,3 @@ class FlaskServer(Server):
     def __call__(self, app, *args, **kwargs):
         self.init()
         return Server.__call__(self, app, *args, **kwargs)
-
-    @staticmethod
-    def register_listeners():
-        ComponentService().left_distance_sensor.triggered = partial(EventService.send_distance_sensor_event,
-                                                                    DistanceSensorType.LEFT)
-        ComponentService().right_distance_sensor.triggered = partial(EventService.send_distance_sensor_event,
-                                                                     DistanceSensorType.RIGHT)
