@@ -10,17 +10,14 @@ manager = Manager(app)
 manager.add_command('runserver', FlaskServer())
 
 
-@app.route('/number/lock', methods=['PUT'])
+@app.route('/rbg', methods=['PUT'])
 def lock_number():
-    ComponentService().lock_number()
-    return jsonify(
-        {'status': 'acknowledged'}
-    )
 
 
 @app.route('/number/unlock', methods=['PUT'])
 def unlock_number():
-    ComponentService().unlock_number()
+    rgb = RGB(19, 13, 26)
+    rdg.red()
     return jsonify(
         {'status': 'acknowledged'}
     )
