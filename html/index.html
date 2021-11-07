@@ -35,7 +35,7 @@
                     data.send()
                     data.onreadystatechange = () =>  {
                         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                            alert(data.response)
+                            console.log(data.response)
                         }
                     }
                 },
