@@ -13,7 +13,7 @@ manager.add_command('runserver', FlaskServer())
 @app.route('/rgb', methods=['PUT'])
 def unlock_number():
     rgb = RGB(19, 13, 26)
-    rdg.red()
+    rgb.red()
     return jsonify(
         {'status': 'acknowledged'}
     )
