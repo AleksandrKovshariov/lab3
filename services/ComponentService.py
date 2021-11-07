@@ -28,9 +28,9 @@ class ComponentService(object):
     def blink(self):
         logger.info(f"Blinking")
         self.rgb.red()
-        sleep(1)
+        sleep(2)
+        self.rgb.green()
+        sleep(2)
         self.rgb.blue()
-        sleep(1)
-        self.rgb.blue()
-        sleep(1)
+        sleep(2)
         self.rgb.turn_off()
