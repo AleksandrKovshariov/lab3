@@ -1,8 +1,6 @@
-from functools import partial
 
 from flask_script import Server
 from log import setup_logger
-import requests
 
 setup_logger('root')
 
