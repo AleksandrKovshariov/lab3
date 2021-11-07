@@ -9,5 +9,4 @@ setup_logger('root')
 
 class FlaskServer(Server):
     def __call__(self, app, *args, **kwargs):
-        self.init()
         return Server.__call__(self, app, *args, **kwargs)
