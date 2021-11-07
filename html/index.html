@@ -37,8 +37,8 @@
                         if (request.readyState === 4) {
                             const result = request.response.data
                             console.log(result)
-                            console.log(JSON(request.response))
-                            console.log(JSON(request.response).data)
+                            console.log(JSON.parse(request.response))
+                            console.log(JSON.parse(request.response).data)
                         }
                     }
                 },
