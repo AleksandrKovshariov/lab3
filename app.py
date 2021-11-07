@@ -12,7 +12,7 @@ manager.add_command('runserver', FlaskServer())
 
 @app.route('/rgb', methods=['PUT'])
 def rbg():
-    ComponentService().unlock_number()
+    ComponentService().blink()
     return jsonify(
         {'status': 'acknowledged'}
     )
