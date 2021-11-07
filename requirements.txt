@@ -1,7 +1,5 @@
 gpiozero==1.6.2
 RPi.GPIO==0.7.0
 requests==2.25.1
-fake-rpigpio==0.1.1
-rpi==0.0.1
 Flask-Script==2.0.6
 python-decouple==3.4
