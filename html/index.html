@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Button align center</title>
 
     <style>
@@ -20,12 +20,14 @@
 
     <script>
         window.onload = () => {
-            var blink = new XMLHttpRequest();
-            blink.open("PUT", '/rgb', true);
             document.getElementById("blink").addEventListener("click",
-                    () => blink.send('{}'),
-                    false
-                );
+                () => {
+                    const blink = new XMLHttpRequest();
+                    blink.open("PUT", '/rgb', true);
+                    blink.send('{}')
+                },
+                false
+            );
         }
 
 
