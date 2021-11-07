@@ -20,7 +20,7 @@
 
     <script>
         var xhr = new XMLHttpRequest();
-        xhr.open("PUT", '/rgb', false);
+        xhr.open("PUT", '/rgb', true);
         xhr.onload = document.getElementById("blink").addEventListener("click",
                 function() {xhr.send('{}')},
                 false
