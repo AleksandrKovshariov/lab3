@@ -19,12 +19,14 @@
     </style>
 
     <script>
-        var xhr = new XMLHttpRequest();
-        xhr.open("PUT", '/rgb', true);
-        xhr.onload = document.getElementById("blink").addEventListener("click",
-                function() {xhr.send('{}')},
-                false
-            );
+        window.onload = () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", '/rgb', true);
+            xhr.onload = document.getElementById("blink").addEventListener("click",
+                    () => xhr.send('{}'),
+                    false
+                );
+        }
 
 
     </script>
