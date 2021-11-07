@@ -40,5 +40,44 @@ class ComponentService(object):
         logger.info(f"Hall sensor data {val}")
         return val
 
+    def morse(self):
+        logger.info(f"Morse")
+        self.dash()
+        self.dot()
+        self.dash()
+        self.nextLetter()
+        self.dash()
+        self.dash()
+        self.dash()
+        self.nextLetter()
+        self.dot()
+        self.dot()
+        self.dot()
+        self.dash()
+        self.nextLetter()
+        self.dash()
+        self.dash()
+        self.dash()
+
+
+
+    def dot(self):
+        self.rgb.red()
+        sleep(0.2)
+        self.rgb.turn_off()
+        sleep(0.2)
+
+    def dash(self):
+        self.rgb.red()
+        sleep(0.6)
+        self.rgb.turn_off()
+        sleep(0.2)
+
+    def nextLetter(self):
+        self.rgb.turn_off()
+        sleep(0.6)
+
+
+
 
 

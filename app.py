@@ -16,12 +16,19 @@ def rbg():
         {'status': 'acknowledged'}
     )
 
+@app.route('/morse', methods=['PUT'])
+def morse():
+    ComponentService().morse()
+    return jsonify(
+        {'status': 'acknowledged'}
+    )
+
 
 @app.route('/data', methods=['GET'])
 def data():
-    dataVal = ComponentService().data()
+    data_val = ComponentService().data()
     return jsonify(
-        {'data': dataVal}
+        {'data': data_val}
     )
 
 

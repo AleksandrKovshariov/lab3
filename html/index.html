@@ -42,6 +42,14 @@
                 },
                 false
             );
+            document.getElementById("morse").addEventListener("click",
+                () => {
+                    const request = new XMLHttpRequest();
+                    request.open("PUT", '/morse', true);
+                    request.send('{}')
+                },
+                false
+            );
         }
 
 
@@ -51,8 +59,8 @@
 <body>
 <div class="flex-parent jc-center">
     <button id="blink" type="submit" class="green margin-right">Blink</button>
+    <button id="morse" type="submit" class="magenta">Morse</button>
     <button id="data" type="submit" class="green margin-right">Get sensor data</button>
-    <button type="submit" class="magenta">Cancel</button>
     <pre>
         <strong id="text" style="font-weight: bold;"></strong>
     </pre>
