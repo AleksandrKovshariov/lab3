@@ -36,7 +36,9 @@
                     request.onreadystatechange = () =>  {
                         if (request.readyState === 4) {
                             const result = request.response.data
-                            alert(result)
+                            console.log(result)
+                            console.log(JSON(request.response))
+                            console.log(JSON(request.response).data)
                         }
                     }
                 },
