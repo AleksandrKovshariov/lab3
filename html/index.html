@@ -22,20 +22,20 @@
         window.onload = () => {
             document.getElementById("blink").addEventListener("click",
                 () => {
-                    const blink = new XMLHttpRequest();
-                    blink.open("PUT", '/rgb', true);
-                    blink.send('{}')
+                    const request = new XMLHttpRequest();
+                    request.open("PUT", '/rgb', true);
+                    request.send('{}')
                 },
                 false
             );
             document.getElementById("data").addEventListener("click",
                 () => {
-                    const data = new XMLHttpRequest();
-                    data.open("GET", '/data', true);
-                    data.send()
-                    data.onreadystatechange = () =>  {
-                        if (this.status === 200) {
-                            console.log(data.response)
+                    const request = new XMLHttpRequest();
+                    request.open("GET", '/data', true);
+                    request.send()
+                    request.onreadystatechange = () =>  {
+                        if (request.readyState === 4) {
+                            console.log(request.response)
                         }
                     }
                 },
