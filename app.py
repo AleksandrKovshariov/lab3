@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from flask_script import Manager
 from FlaskServer import FlaskServer
 from components.RGB import RGB
@@ -16,6 +16,11 @@ def rbg():
     return jsonify(
         {'status': 'acknowledged'}
     )
+
+
+@app.route('/')
+def html():
+    return send_from_directory('html', 'index.html')
 
 
 if __name__ == '__main__':
