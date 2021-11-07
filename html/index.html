@@ -35,8 +35,8 @@
                     request.send()
                     request.onreadystatechange = () =>  {
                         if (request.readyState === 4) {
-                            const result = request.response.data
-                            document.getElementById("text").textContent = "Sensor data: " + result
+                            const result = JSON.parse(request.response).data
+                            document.getElementById("text").textContent = `Sensor data: ${result}`
                         }
                     }
                 },
