@@ -1,7 +1,7 @@
 import logging
 from time import sleep
 
-from components.sensors.DistanceSensor import DistanceSensor
+from components.sensors.Hall import Hall
 from components.RGB import RGB
 
 try:
@@ -20,8 +20,7 @@ class ComponentService(object):
     def __new__(self):
         if not self._instance:
             self._instance = super(ComponentService, self).__new__(self)
-            self.left_distance_sensor = DistanceSensor(21)
-            self.right_distance_sensor = DistanceSensor(25)
+            self.hall = Hall(pin=21)
             self.rgb = RGB(19, 13, 26)
         return self._instance
 
@@ -34,3 +33,12 @@ class ComponentService(object):
         self.rgb.blue()
         sleep(1.5)
         self.rgb.turn_off()
+
+    def data(self):
+        logging.info("Get hall sensor data")
+        val = self.hall.value
+        logger.info(f"Hall sensor data ${val}")
+        return val
+
+
+

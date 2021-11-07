@@ -28,6 +28,14 @@
                 },
                 false
             );
+            document.getElementById("data").addEventListener("click",
+                () => {
+                    const blink = new XMLHttpRequest();
+                    blink.open("GET", '/data', true);
+                    blink.send()
+                },
+                false
+            );
         }
 
 
@@ -37,7 +45,7 @@
 <body>
 <div class="flex-parent jc-center">
     <button id="blink" type="submit" class="green margin-right">Blink</button>
-    <button type="submit" class="green margin-right">Confirm</button>
+    <button id="data" type="submit" class="green margin-right">Get sensor data</button>
     <button type="submit" class="magenta">Cancel</button>
 </div>
 </body>

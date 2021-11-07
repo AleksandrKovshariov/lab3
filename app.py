@@ -17,6 +17,14 @@ def rbg():
         {'status': 'acknowledged'}
     )
 
+@app.route('/data', methods=['GET'])
+def data():
+    ComponentService().data()
+    return jsonify(
+        {'status': 'ok'}
+    )
+
+
 
 @app.route('/')
 def html():
